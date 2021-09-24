@@ -1,6 +1,6 @@
 = Microproject : Tanzschule
 Christine Raffeiner
-1.0.0, yyyy-mm-dd: Some notes
+1.0.0, 2021-09-24: Some notes
 ifndef::imagesdir[:imagesdir: images]
 //:toc-placement!:  // prevents the generation of the doc at this position, so it can be printed afterwards
 :sourcedir: ../src/main/java
@@ -9,6 +9,9 @@ ifndef::imagesdir[:imagesdir: images]
 :toc: left
 
 == Idee zum Microproject Tanzschule
+* Ein Schüler kann sich bei verschiedenen Tanzkursen anmelden.
+* Die Kurse kosten einem bestimmten Betrag bei welchem geprüft werden kann, ob der Schüler ihn schon bezahlt hat.
+* Schüler, Lehrer und Tanzkurse können verwaltet werden.
 
 == Klassendiagramm
 .Klassendiagramm für Microproject Tanzschule
