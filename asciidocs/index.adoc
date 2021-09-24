@@ -1,0 +1,19 @@
+= Microproject : Tanzschule
+Christine Raffeiner
+1.0.0, yyyy-mm-dd: Some notes
+ifndef::imagesdir[:imagesdir: images]
+//:toc-placement!:  // prevents the generation of the doc at this position, so it can be printed afterwards
+:sourcedir: ../src/main/java
+:icons: font
+:sectnums:    // Nummerierung der Ãœberschriften / section numbering
+:toc: left
+
+== Idee zum Microproject Tanzschule
+
+== Klassendiagramm
+.Klassendiagramm für Microproject Tanzschule
+[plantuml, cld, png, align=center]
+----
+include::plantuml/cld.puml[]
+----
+
