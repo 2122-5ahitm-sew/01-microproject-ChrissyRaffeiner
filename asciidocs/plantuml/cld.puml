@@ -19,7 +19,7 @@ class Teacher{
 class Lesson{
     +id : Long
     +date : LocalDate
-    +durration : double
+    +durationUnits : double
     +starttime : String
     +costs : double
     +type : Lessontype
@@ -36,9 +36,9 @@ class Booking{
 enum Lessontype{
     BALLET
     HIPHOP
-    GRUNDKURS_EINSTEIGER
-    GRUNDKURS_FORTGESCHRITTENE
-    GRUNDKURS_PROFIS
+    STANDARDTANZ_EINSTEIGER
+    STANDARDTANZ_FORTGESCHRITTENE
+    STANDARDTANZ_PROFIS
 }
 
 Lesson -down-> Lessontype

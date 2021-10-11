@@ -12,7 +12,7 @@ public class Lesson extends PanacheEntityBase {
 
     public String name;
     public LocalDate date;
-    public double duration;
+    public double durationUnits;
     public String starttime;
     public double costs;
 
