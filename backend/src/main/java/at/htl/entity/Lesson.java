@@ -1,6 +1,8 @@
 package at.htl.entity;
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 
+import javax.json.bind.annotation.JsonbDateFormat;
+import javax.json.bind.annotation.JsonbProperty;
 import javax.persistence.*;
 import java.time.LocalDate;
 
@@ -11,7 +13,10 @@ public class Lesson extends PanacheEntityBase {
     public Long id;
 
     public String name;
+    @JsonbDateFormat("yyyy-mm-dd")
     public LocalDate date;
+
+    @JsonbProperty("durration_units")
     public double durationUnits;
     public String starttime;
     public double costs;

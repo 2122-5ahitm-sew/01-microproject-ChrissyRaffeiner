@@ -95,4 +95,6 @@ class LessonRepoTest {
         Table table = new Table(ds, "lesson");
         output(table).toConsole();
     }
+
+
 }

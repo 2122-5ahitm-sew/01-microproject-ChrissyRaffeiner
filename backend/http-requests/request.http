@@ -1,0 +1,52 @@
+POST http://localhost:8080/api/lesson
+Content-Type: application/json
+
+{
+  "name": "Lesson 1",
+  "date": null,
+  "durration_units": 2.5,
+  "starttime": "12 Uhr",
+  "costs": 20.5,
+  "type" : "STANDARDTANZ_EINSTEIGER",
+  "teacher": {
+    "firstname": "Lisa",
+    "lastname": "Reiner",
+    "email": "test@gmail.com",
+    "age": 22,
+    "salary": 200.20
+  }
+}
+
+###
+
+GET http://localhost:8080/api/lesson/id/1
+
+###
+
+GET http://localhost:8080/api/lesson
+
+###
+
+PUT http://localhost:8080/api/lesson/1
+Content-Type: application/json
+
+{
+  "name": "Lesson new",
+  "date": null,
+  "durration_units": 2.5,
+  "starttime": "14 Uhr",
+  "costs": 20.5,
+  "type" : "STANDARDTANZ_EINSTEIGER",
+  "teacher": {
+    "firstname": "Lisa",
+    "lastname": "Reiner",
+    "email": "test1@gmail.com",
+    "age": 21,
+    "salary": 201.20
+  }
+}
+
+###
+DELETE http://localhost:8080/api/lesson/1
+
+###
