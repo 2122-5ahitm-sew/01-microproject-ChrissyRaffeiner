@@ -1,0 +1,51 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+abstract class Person{
+    +id : Long
+    +firstname : String
+    +lastname : String
+    +email : String
+    +age : int
+}
+
+class Student{
+}
+
+class Teacher{
+    +salary : double
+}
+
+class Lesson{
+    +id : Long
+    +date : LocalDate
+    +durationUnits : double
+    +starttime : String
+    +costs : double
+    +type : Lessontype
+    +teacher : Teacher
+}
+
+class Booking{
+    +id : Long
+    +lessonpayed  Boolean
+    +student : Student
+    +lesson : Lesson
+}
+
+enum Lessontype{
+    BALLET
+    HIPHOP
+    STANDARDTANZ_EINSTEIGER
+    STANDARDTANZ_FORTGESCHRITTENE
+    STANDARDTANZ_PROFIS
+}
+
+Lesson -down-> Lessontype
+Booking -down-> Lesson
+Lesson -up-> Teacher
+Booking -up-> Student
+Person <|-- Teacher
+Person <|-- Student
+
+@enduml
