@@ -7,7 +7,7 @@ import javax.persistence.*;
 @Entity
 public class Booking extends PanacheEntityBase {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long id;
     public Boolean lessonpayed;
 
@@ -16,4 +16,14 @@ public class Booking extends PanacheEntityBase {
 
     @ManyToOne
     public Student s;
+
+    public Booking(Boolean lessonpayed, Lesson lesson, Student s) {
+        this.lessonpayed = lessonpayed;
+        this.lesson = lesson;
+        this.s = s;
+    }
+
+    public Booking() {
+
+    }
 }

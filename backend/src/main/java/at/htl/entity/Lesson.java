@@ -7,7 +7,7 @@ import java.time.LocalDate;
 @Entity
 public class Lesson extends PanacheEntityBase {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long id;
 
     public String name;
@@ -16,8 +16,22 @@ public class Lesson extends PanacheEntityBase {
     public String starttime;
     public double costs;
 
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     public Teacher teacher;
 
     public Lessontype type;
+
+    public Lesson(String name, LocalDate date, double durationUnits, String starttime, double costs, Teacher teacher, Lessontype type) {
+        this.name = name;
+        this.date = date;
+        this.durationUnits = durationUnits;
+        this.starttime = starttime;
+        this.costs = costs;
+        this.teacher = teacher;
+        this.type = type;
+    }
+
+    public Lesson() {
+
+    }
 }
