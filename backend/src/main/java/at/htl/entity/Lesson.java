@@ -34,4 +34,17 @@ public class Lesson extends PanacheEntityBase {
     public Lesson() {
 
     }
+
+    @Override
+    public String toString() {
+        return "Lesson{" +
+                "name='" + name + '\'' +
+                ", date=" + date +
+                ", durationUnits=" + durationUnits +
+                ", starttime='" + starttime + '\'' +
+                ", costs=" + costs +
+                ", teacher=" + teacher +
+                ", type=" + type +
+                '}';
+    }
 }

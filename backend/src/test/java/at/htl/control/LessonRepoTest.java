@@ -14,6 +14,8 @@ import javax.transaction.Transactional;
 
 import java.time.LocalDate;
 import org.assertj.db.type.Table;
+
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.db.output.Outputs.output;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -27,10 +29,14 @@ class LessonRepoTest {
     @Inject
     LessonRepo lessonRepo;
 
+    @Inject
+    TeacherRepo teacherRepo;
+
     @Test
     @Transactional
     void t01_insertLesson() {
-        Lesson lesson = new Lesson("Balettkurs Gruppe 1", LocalDate.now(), 2.5, "12 Uhr", 20.5, new Teacher("Lisa", "Moser", "l.moser@gmail.com", 22, 1200.00), Lessontype.BALLET);
+        Teacher teacher = teacherRepo.findById((long) 100);
+        Lesson lesson = new Lesson("Balettkurs Gruppe 1", LocalDate.now(), 2.5, "12 Uhr", 20.5, teacher, Lessontype.BALLET);
 
         lessonRepo.save(lesson);
 
@@ -42,5 +48,51 @@ class LessonRepoTest {
                 .value("name").isEqualTo("Balettkurs Gruppe 1")
                 .value("durationUnits").isEqualTo(2.5)
                 .value("type").isEqualTo(0);//0 -> Ballet
+    }
+
+    @Test
+    @Transactional
+    void t02_findByID() {
+        Lesson lesson = lessonRepo.findById((long) 1);
+        System.out.println(lesson);
+
+        assertThat(lesson.name).isEqualTo("Balettkurs Gruppe 1");
+        assertThat(lesson.durationUnits).isEqualTo(2.5);
+    }
+
+    @Test
+    @Transactional
+    void t03_update() {
+        Lesson lesson = lessonRepo.findById((long) 1);
+        System.out.println(lesson);
+
+        lesson.name = "New Ballet Kurs";
+        lessonRepo.save(lesson);
+    }
+
+    @Test
+    @Transactional
+    void t04_checkupdate() {
+        Table table = new Table(ds, "lesson");
+        output(table).toConsole();
+        org.assertj.db.api.Assertions.assertThat(table)
+                .row(0)
+                .value("name").isEqualTo("New Ballet Kurs");
+    }
+
+    @Test
+    @Transactional
+    void t05_delete() {
+        Lesson lesson = lessonRepo.findById((long) 1);
+        System.out.println(lesson);
+
+        lessonRepo.delete(lesson);
+    }
+
+    @Test
+    @Transactional
+    void t06_checkdelete() {
+        Table table = new Table(ds, "lesson");
+        output(table).toConsole();
     }
 }

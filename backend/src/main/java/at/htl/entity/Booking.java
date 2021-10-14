@@ -26,4 +26,13 @@ public class Booking extends PanacheEntityBase {
     public Booking() {
 
     }
+
+    @Override
+    public String toString() {
+        return "Booking{" +
+                "lessonpayed=" + lessonpayed +
+                ", lesson=" + lesson +
+                ", s=" + s +
+                '}';
+    }
 }

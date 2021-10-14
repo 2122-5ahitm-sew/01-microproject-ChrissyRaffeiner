@@ -48,6 +48,7 @@ class StudentRepoTest {
                 .value("firstname").isEqualTo("Isabel")
                 .value("lastname").isEqualTo("Turner");
     }
+    
 
     @Test
     @Transactional
