@@ -7,4 +7,5 @@ insert into Student(id, firstname, lastname, email, age) values (102, 'Marah', '
 insert into Student(id, firstname, lastname, email, age) values (103, 'Sara', 'Feichtiger', 's.f@gmail.com', 18);
 insert into Student(id, firstname, lastname, email, age) values (104, 'Nina', 'Weisengruber', 'weisengruber@gmail.com', 18);
 
---insert into Lesson(id, date, durationUnits, starttime, costs) values ('Tanzkurs 1', convert(datetime, '2006-12-12T23:45:12-08:00', 121), 2.5, '12 Uhr', 20.0);
+insert into Lesson(id, name,  date, durationUnits, starttime, costs, teacher_id, type) values (100, 'Tanzkurs 1', null, 2.5, '12 Uhr', 20.0, 100, 2);
+insert into Lesson(id, name, date, durationUnits, starttime, costs, teacher_id, type) values (101, 'Tanzkurs 2', null, 4.5, '17 Uhr', 22.0, 100, 3);

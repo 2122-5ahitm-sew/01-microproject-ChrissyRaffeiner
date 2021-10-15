@@ -15,12 +15,12 @@ public class Booking extends PanacheEntityBase {
     public Lesson lesson;
 
     @ManyToOne
-    public Student s;
+    public Student student;
 
     public Booking(Boolean lessonpayed, Lesson lesson, Student s) {
         this.lessonpayed = lessonpayed;
         this.lesson = lesson;
-        this.s = s;
+        this.student = s;
     }
 
     public Booking() {
@@ -32,7 +32,7 @@ public class Booking extends PanacheEntityBase {
         return "Booking{" +
                 "lessonpayed=" + lessonpayed +
                 ", lesson=" + lesson +
-                ", s=" + s +
+                ", s=" + student +
                 '}';
     }
 }

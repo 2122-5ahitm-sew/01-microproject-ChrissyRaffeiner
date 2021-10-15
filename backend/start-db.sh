@@ -1,5 +1,5 @@
 docker run --rm=true \
-           --name postgres-leo-survey \
+           --name postgres-mircoproject-skischule \
            -e POSTGRES_USER=app \
            -e POSTGRES_PASSWORD=app \
            -e POSTGRES_DB=db \
