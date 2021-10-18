@@ -13,7 +13,7 @@ public class Lesson extends PanacheEntityBase {
     public Long id;
 
     public String name;
-    @JsonbDateFormat("yyyy-mm-dd")
+    //@JsonbDateFormat("yyyy-mm-dd")
     public LocalDate date;
 
     @JsonbProperty("durration_units")
