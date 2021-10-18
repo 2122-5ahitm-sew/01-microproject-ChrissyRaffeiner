@@ -3,7 +3,7 @@ Content-Type: application/json
 
 {
   "name": "Lesson 1",
-  "date": null,
+  "date": "2021-12-12",
   "durration_units": 2.5,
   "starttime": "12 Uhr",
   "costs": 20.5,
