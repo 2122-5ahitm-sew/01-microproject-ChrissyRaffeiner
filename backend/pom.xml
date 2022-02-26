@@ -75,6 +75,10 @@
       <version>2.0.2</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+    <groupId>io.quarkus</groupId>
+    <artifactId>quarkus-smallrye-graphql</artifactId>
+  </dependency>
   </dependencies>
   <build>
     <plugins>

@@ -50,3 +50,13 @@ Content-Type: application/json
 DELETE http://localhost:8080/api/lesson/1
 
 ###
+
+
+##Teacher
+GET http://localhost:8080/api/teacher/
+
+###
+GET http://localhost:8080/api/teacher/id/100
+
+###
+GET http://localhost:8080/api/student
